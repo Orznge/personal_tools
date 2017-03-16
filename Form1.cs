@@ -164,7 +164,10 @@ namespace PGC信息采集
 
         private void LB_Batchlist_DragDrop(object sender, DragEventArgs e)
         {
-            LB_Batchlist.Items.RemoveAt(0);
+            if (LB_Batchlist.Items.Count > 0)
+                { 
+                 LB_Batchlist.Items.RemoveAt(0);
+                }
             //LB_Batchlist.Items.Clear();
             String[] fileNames = (String[])e.Data.GetData(DataFormats.FileDrop);
             int j = LB_Batchlist.Items.Count + 1;
